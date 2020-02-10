@@ -1,6 +1,30 @@
 import { useState, useCallback } from 'react';
 import Cookies from 'js-cookie';
+// USAGE:
+/* 
+const Demo = () => {
+  const [value, updateCookie, deleteCookie] = useCookie("my-cookie");
+  const [counter, setCounter] = useState(1);
 
+  useEffect(() => {
+    deleteCookie();
+  }, []);
+
+  const updateCookieHandler = () => {
+    updateCookie(`my-awesome-cookie-${counter}`);
+    setCounter(c => c + 1);
+  };
+
+  return (
+    <div>
+      <p>Value: {value}</p>
+      <button onClick={updateCookieHandler}>Update Cookie</button>
+      <br />
+      <button onClick={deleteCookie}>Delete Cookie</button>
+    </div>
+  );
+};
+*/
 const useCookie = (
   cookieName: string
 ): [string | null, (newValue: string, options?: Cookies.CookieAttributes) => void, () => void] => {
